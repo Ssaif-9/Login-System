@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LoginSystem", "LoginSystem\LoginSystem.cproj", "{6E57377C-2D80-4A17-9518-DB2675A1F439}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E57377C-2D80-4A17-9518-DB2675A1F439}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6E57377C-2D80-4A17-9518-DB2675A1F439}.Debug|AVR.Build.0 = Debug|AVR
+		{6E57377C-2D80-4A17-9518-DB2675A1F439}.Release|AVR.ActiveCfg = Release|AVR
+		{6E57377C-2D80-4A17-9518-DB2675A1F439}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
