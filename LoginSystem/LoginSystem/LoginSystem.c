@@ -18,6 +18,7 @@
 #include "UART_interface.h"
 
 #include "I2C_interface.h"
+#include "I2C_private.h"
 
 #include "KEYPAD_interface.h"
 
@@ -34,13 +35,14 @@
 #include "PRIVATE_PASSWARD.h"
 
 #include "EEPROM_interface.h"
+#include "EEPROM_private.h"
 
 u8 WrongCounter=2;
 
 int main(void)
 {
 	u8 TakenPassword[MaxPasswardSize];
-	u8 StoagePassword=PASSWARD;
+	u8 StoagePassword;
 	
 	u16 password;
 	u8 passwordSize=0;
@@ -49,9 +51,7 @@ int main(void)
 	u8 Index=0;
 	u8 ButtonValue;
     
-// 	EEPROM_init();
-// 	EEPROM_WriteByte(100,PASSWARD);
-// 	EEPROM_ReadByte(100,&StoagePassword);
+	
 	
 	KEYPAD_init();
 	UART_init();
@@ -69,8 +69,14 @@ int main(void)
 	LCD_ClearDesplay();
 	LCD_SendString("PASSWORD:");
 	
+	EEPROM_init();
+	
     while(1)
     {
+		EEPROM_WriteByte(200,PASSWARD_VALUE);
+		_delay_ms(10);
+		EEPROM_ReadByte(200,&StoagePassword);
+		_delay_ms(10);
 		BUTTON_ReadValue(SwitchMode_BUTTON_PORT,SwitchMode_BUTTON_PIN,&ButtonValue,BUTTON_PullDown);
 		
 		/*	BLUETOTH MODE	*/
@@ -82,7 +88,7 @@ int main(void)
 		  		TakenPassword[Index]=ReceiveValue-48;
 		  		Index++;
 		  		passwordSize++;
-		  		LCD_SendIntegarNumber(ReceiveValue-48);
+		  		LCD_sendChar('*');
 		    }
 		    
 		    password =TakenPassword[0]*100+TakenPassword[1]*10+TakenPassword[2]*1;
@@ -178,7 +184,7 @@ int main(void)
 					TakenPassword[Index]=KeypadValue;
 					Index++;
 					passwordSize++;
-					LCD_SendIntegarNumber(KeypadValue);
+					LCD_sendChar('*');
 				}
 				
 				password =TakenPassword[0]*100+TakenPassword[1]*10+TakenPassword[2]*1;

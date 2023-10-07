@@ -18,8 +18,8 @@
 
 /*	Password Config	*/
 
-#define MaxPasswardSize 3
-#define PASSWARD        123
+#define MaxPasswardSize       3
+#define PASSWARD_VALUE        000
 
 
 /*	LED Config	*/
