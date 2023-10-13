@@ -19,7 +19,7 @@
 /*	Password Config	*/
 
 #define MaxPasswardSize       3
-#define PASSWARD_VALUE        000
+#define PASSWARD_VALUE        123
 
 
 /*	LED Config	*/
@@ -105,6 +105,10 @@
 
 
 /*	Servo Config	*/
+
+#define Frequance           50
+#define DutyCycle_0Angle    7.5
+#define DutyCycle_90Angle   10
 
 #define SERVO_PORT DIO_PORTD
 #define SERVO_PIN  DIO_PIN7

@@ -30,7 +30,7 @@ void SERVO_init(void)
 	DIO_SetPinDirection(TMR1_OC1B_PORT,TMR1_OC1B_PIN,DIO_PIN_OUTPUT);
 }
 
-void SERVO_TurnON(u16 freq ,u16 Duty)
+void SERVO_TurnON(u16 freq ,f32 Duty)
 {	
 	TMR1_init();
 	TMR1_SetDutyCycle_And_Freq_Value(freq,Duty);

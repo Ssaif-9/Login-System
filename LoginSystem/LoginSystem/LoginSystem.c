@@ -18,7 +18,6 @@
 #include "UART_interface.h"
 
 #include "I2C_interface.h"
-#include "I2C_private.h"
 
 #include "KEYPAD_interface.h"
 
@@ -35,28 +34,25 @@
 #include "PRIVATE_PASSWARD.h"
 
 #include "EEPROM_interface.h"
-#include "EEPROM_private.h"
 
 u8 WrongCounter=2;
 
 int main(void)
 {
 	u8 TakenPassword[MaxPasswardSize];
+	u8 Index=0;
 	u8 StoagePassword;
 	
+	u8 ButtonValue;
 	u16 password;
 	u8 passwordSize=0;
 	u8 ReceiveValue;
 	u8 KeypadValue;
-	u8 Index=0;
-	u8 ButtonValue;
-    
-	
 	
 	KEYPAD_init();
 	UART_init();
 	SERVO_init();
-	SERVO_TurnON(4999,374);
+	SERVO_TurnON(Frequance,DutyCycle_0Angle);
 	LCD_init();
 	RELAY_init(RELAY_PORT,RELAY_PIN);
 	LED_init(WARNING_LED_PORT,WARNING_LED_PIN);
@@ -64,19 +60,21 @@ int main(void)
 	LED_init(OK_LED_PORT,OK_LED_PIN);
 	BUTTON_init(SwitchMode_BUTTON_PORT,SwitchMode_BUTTON_PIN);
 	
+	EEPROM_init();
+	EEPROM_WriteByte(0,PASSWARD_VALUE);
+	_delay_ms(10);
+	EEPROM_ReadByte(0,&StoagePassword);
+	_delay_ms(10);
+	
+	
 	LCD_SendString("    WELCOME    ");
 	_delay_ms(1500);
 	LCD_ClearDesplay();
 	LCD_SendString("PASSWORD:");
 	
-	EEPROM_init();
 	
     while(1)
     {
-		EEPROM_WriteByte(200,PASSWARD_VALUE);
-		_delay_ms(10);
-		EEPROM_ReadByte(200,&StoagePassword);
-		_delay_ms(10);
 		BUTTON_ReadValue(SwitchMode_BUTTON_PORT,SwitchMode_BUTTON_PIN,&ButtonValue,BUTTON_PullDown);
 		
 		/*	BLUETOTH MODE	*/
@@ -102,7 +100,7 @@ int main(void)
 					LCD_SendString("                 ");
 					LCD_GoToLocation(1,2);
 					LCD_SendString("TRUE");
-					SERVO_TurnON(4999,499);
+					SERVO_TurnON(Frequance,DutyCycle_90Angle);
 					LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 					LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 					LED_TurnON(OK_LED_PORT,OK_LED_PIN);
@@ -118,7 +116,7 @@ int main(void)
 						LCD_SendString("Try Again [");
 						LCD_SendIntegarNumber(WrongCounter);
 						LCD_SendString("]");
-						SERVO_TurnON(4999,374);
+						SERVO_TurnON(Frequance,DutyCycle_0Angle);
 						LED_TurnOFF(OK_LED_PORT,OK_LED_PIN);
 						LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 						LED_TurnON(WARNING_LED_PORT,WARNING_LED_PIN);
@@ -150,7 +148,7 @@ int main(void)
 					LED_TurnON(NOK_LED_PORT,NOK_LED_PIN);
 					LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 					RELAY_TurnON(RELAY_PORT,RELAY_PIN);
-					SERVO_TurnON(4999,374);
+					SERVO_TurnON(Frequance,DutyCycle_0Angle);
 					LCD_ClearDesplay();
 					LCD_SendString("PASSWORD:");
 				}
@@ -162,7 +160,7 @@ int main(void)
 					LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 					LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 					RELAY_TurnOFF(RELAY_PORT,RELAY_PIN);
-					SERVO_TurnON(4999,374);
+					SERVO_TurnON(Frequance,DutyCycle_0Angle);
 					LCD_ClearDesplay();
 					LCD_SendString("PASSWORD:");  
 			    }
@@ -198,7 +196,7 @@ int main(void)
 						 LCD_SendString("                 ");
 						 LCD_GoToLocation(1,2);
 						 LCD_SendString("TRUE");
-						 SERVO_TurnON(4999,499);
+						 SERVO_TurnON(Frequance,DutyCycle_90Angle);
 						 LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 						 LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 						 LED_TurnON(OK_LED_PORT,OK_LED_PIN);
@@ -214,7 +212,7 @@ int main(void)
 							 LCD_SendString("Try Again [");
 							 LCD_SendIntegarNumber(WrongCounter);
 							 LCD_SendString("]");
-							 SERVO_TurnON(4999,374);
+							 SERVO_TurnON(Frequance,DutyCycle_0Angle);
 							 LED_TurnOFF(OK_LED_PORT,OK_LED_PIN);
 							 LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 							 LED_TurnON(WARNING_LED_PORT,WARNING_LED_PIN);
@@ -246,7 +244,7 @@ int main(void)
 						LED_TurnON(NOK_LED_PORT,NOK_LED_PIN);
 						LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 						RELAY_TurnON(RELAY_PORT,RELAY_PIN);
-						SERVO_TurnON(4999,374);
+						SERVO_TurnON(Frequance,DutyCycle_0Angle);
 						LCD_ClearDesplay();
 						LCD_SendString("PASSWORD:");
 					}
@@ -258,7 +256,7 @@ int main(void)
 						LED_TurnOFF(NOK_LED_PORT,NOK_LED_PIN);
 						LED_TurnOFF(WARNING_LED_PORT,WARNING_LED_PIN);
 						RELAY_TurnOFF(RELAY_PORT,RELAY_PIN);
-						SERVO_TurnON(4999,374);
+						SERVO_TurnON(Frequance,DutyCycle_0Angle);
 						LCD_ClearDesplay();
 						LCD_SendString("PASSWORD:");
 					}

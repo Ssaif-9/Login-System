@@ -10,7 +10,7 @@
 #define SERVO_INTERFACE_H_
 
 void SERVO_init           (void);
-void SERVO_TurnON         (u16 freq ,u16 Duty);
+void SERVO_TurnON         (u16 freq ,f32 Duty);
 void SERVO_TurnOFF        (void);
 
 

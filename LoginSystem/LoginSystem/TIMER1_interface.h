@@ -13,6 +13,6 @@
 void TMR1_init                         (void);
 void TMR1_Start                        (void);
 void TMR1_Stop                         (void);
-void TMR1_SetDutyCycle_And_Freq_Value  (u16 Freq ,u16 Duty);
+void TMR1_SetDutyCycle_And_Freq_Value  (u16 Freq ,f32 Duty);
 
 #endif /* TIMER1_INTERFACE_H_ */

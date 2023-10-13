@@ -32,7 +32,7 @@ void TMR1_init(void)
 
 void TMR1_Start(void)
 {
-	/*select prescaller : 64*/
+	/*select prescaler : 64*/
 	
 	SET_BIT(TCCR1B,CS10);
 	SET_BIT(TCCR1B,CS11);
@@ -48,13 +48,13 @@ void TMR1_Stop(void)
 }
 
 
-void TMR1_SetDutyCycle_And_Freq_Value(u16 Freq ,u16 Duty)
+void TMR1_SetDutyCycle_And_Freq_Value(u16 Freq ,f32 Duty)
 {	
-	ICR1L=Freq;
-	OCR1AL=Duty;
-	OCR1BL=Duty;
-
-// 	ICR1L =(u16)((1/Frequance)/(1/250000))-1;
-// 	OCR1AL=(u16)((DutyCycle/100)*(ICR1L+1))-1;           
+// 	OCR1BL=Duty;  
+	if(Duty<=100)
+	{
+		ICR1L =((1000000UL/Freq)/4)-1;
+		OCR1AL=((Duty*(ICR1L+1))/100.0)-1;
+	}		 
 }
 
