@@ -2,27 +2,29 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-BUTTON_program.c
+APP\LoginSystem.c
 
-DIO_program.c
+HAL\BLUETOOTH\src\BLUETOOTH_program.c
 
-EEPROM_program.c
+HAL\BUTTON\src\BUTTON_program.c
 
-I2C_program.c
+HAL\EEPROM\src\EEPROM_program.c
 
-LoginSystem.c
+HAL\KEYPAD\src\KEYPAD_program.c
 
-KEYPAD_program.c
+HAL\LCD\src\LCD_program.c
 
-LCD_program.c
+HAL\LED\src\LED_program.c
 
-LED_program.c
+HAL\RELAY\src\RELAY_program.c
 
-RELAY_program.c
+HAL\SERVO\src\SERVO_program.c
 
-SERVO_program.c
+MCAL\DIO\src\DIO_program.c
 
-TIMER1_program.c
+MCAL\I2C\src\I2C_program.c
 
-UART_program.c
+MCAL\TMR1\src\TIMER1_program.c
+
+MCAL\UART\src\UART_program.c
 

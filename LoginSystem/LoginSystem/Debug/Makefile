@@ -30,23 +30,64 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:=
 
 # Every subdirectory with source files must be described here
-SUBDIRS := 
+SUBDIRS :=  \
+../HAL/BLUETOOTH/includes \
+../HAL/BLUETOOTH/src \
+../HAL/BUTTON \
+../HAL/BUTTON/includes \
+../HAL/BUTTON/src \
+../HAL/EEPROM/includes \
+../HAL/EEPROM/src \
+../HAL/KEYPAD/includes \
+../HAL/KEYPAD/src \
+../HAL/LCD/includes \
+../HAL/LCD/src \
+../HAL/LED \
+../HAL/EEPROM \
+../HAL/KEYPAD \
+../HAL/LCD \
+../HAL/LED/includes \
+../HAL/LED/src \
+../HAL/BLUETOOTH \
+../HAL/RELAY \
+../HAL/RELAY/includes \
+../HAL/RELAY/src \
+../HAL/SERVO \
+../HAL/SERVO/includes \
+../HAL/SERVO/src \
+../MCAL \
+../HAL \
+../APP \
+../MCAL/DIO/includes \
+../MCAL/DIO/src \
+../MCAL/I2C \
+../MCAL/DIO \
+../MCAL/I2C/includes \
+../MCAL/I2C/src \
+../MCAL/TMR1/includes \
+../MCAL/TMR1/src \
+../MCAL/UART \
+../MCAL/TMR1 \
+../MCAL/UART/includes \
+../MCAL/UART/src \
+../UTILITIZE
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../BUTTON_program.c \
-../DIO_program.c \
-../EEPROM_program.c \
-../I2C_program.c \
-../LoginSystem.c \
-../KEYPAD_program.c \
-../LCD_program.c \
-../LED_program.c \
-../RELAY_program.c \
-../SERVO_program.c \
-../TIMER1_program.c \
-../UART_program.c
+../APP/LoginSystem.c \
+../HAL/BLUETOOTH/src/BLUETOOTH_program.c \
+../HAL/BUTTON/src/BUTTON_program.c \
+../HAL/EEPROM/src/EEPROM_program.c \
+../HAL/KEYPAD/src/KEYPAD_program.c \
+../HAL/LCD/src/LCD_program.c \
+../HAL/LED/src/LED_program.c \
+../HAL/RELAY/src/RELAY_program.c \
+../HAL/SERVO/src/SERVO_program.c \
+../MCAL/DIO/src/DIO_program.c \
+../MCAL/I2C/src/I2C_program.c \
+../MCAL/TMR1/src/TIMER1_program.c \
+../MCAL/UART/src/UART_program.c
 
 
 PREPROCESSING_SRCS += 
@@ -56,63 +97,67 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-BUTTON_program.o \
-DIO_program.o \
-EEPROM_program.o \
-I2C_program.o \
-LoginSystem.o \
-KEYPAD_program.o \
-LCD_program.o \
-LED_program.o \
-RELAY_program.o \
-SERVO_program.o \
-TIMER1_program.o \
-UART_program.o
+APP/LoginSystem.o \
+HAL/BLUETOOTH/src/BLUETOOTH_program.o \
+HAL/BUTTON/src/BUTTON_program.o \
+HAL/EEPROM/src/EEPROM_program.o \
+HAL/KEYPAD/src/KEYPAD_program.o \
+HAL/LCD/src/LCD_program.o \
+HAL/LED/src/LED_program.o \
+HAL/RELAY/src/RELAY_program.o \
+HAL/SERVO/src/SERVO_program.o \
+MCAL/DIO/src/DIO_program.o \
+MCAL/I2C/src/I2C_program.o \
+MCAL/TMR1/src/TIMER1_program.o \
+MCAL/UART/src/UART_program.o
 
 
 OBJS_AS_ARGS +=  \
-BUTTON_program.o \
-DIO_program.o \
-EEPROM_program.o \
-I2C_program.o \
-LoginSystem.o \
-KEYPAD_program.o \
-LCD_program.o \
-LED_program.o \
-RELAY_program.o \
-SERVO_program.o \
-TIMER1_program.o \
-UART_program.o
+APP/LoginSystem.o \
+HAL/BLUETOOTH/src/BLUETOOTH_program.o \
+HAL/BUTTON/src/BUTTON_program.o \
+HAL/EEPROM/src/EEPROM_program.o \
+HAL/KEYPAD/src/KEYPAD_program.o \
+HAL/LCD/src/LCD_program.o \
+HAL/LED/src/LED_program.o \
+HAL/RELAY/src/RELAY_program.o \
+HAL/SERVO/src/SERVO_program.o \
+MCAL/DIO/src/DIO_program.o \
+MCAL/I2C/src/I2C_program.o \
+MCAL/TMR1/src/TIMER1_program.o \
+MCAL/UART/src/UART_program.o
 
 
 C_DEPS +=  \
-BUTTON_program.d \
-DIO_program.d \
-EEPROM_program.d \
-I2C_program.d \
-LoginSystem.d \
-KEYPAD_program.d \
-LCD_program.d \
-LED_program.d \
-RELAY_program.d \
-SERVO_program.d \
-TIMER1_program.d \
-UART_program.d
+APP/LoginSystem.d \
+HAL/BLUETOOTH/src/BLUETOOTH_program.d \
+HAL/BUTTON/src/BUTTON_program.d \
+HAL/EEPROM/src/EEPROM_program.d \
+HAL/KEYPAD/src/KEYPAD_program.d \
+HAL/LCD/src/LCD_program.d \
+HAL/LED/src/LED_program.d \
+HAL/RELAY/src/RELAY_program.d \
+HAL/SERVO/src/SERVO_program.d \
+MCAL/DIO/src/DIO_program.d \
+MCAL/I2C/src/I2C_program.d \
+MCAL/TMR1/src/TIMER1_program.d \
+MCAL/UART/src/UART_program.d
 
 
 C_DEPS_AS_ARGS +=  \
-BUTTON_program.d \
-DIO_program.d \
-EEPROM_program.d \
-I2C_program.d \
-LoginSystem.d \
-KEYPAD_program.d \
-LCD_program.d \
-LED_program.d \
-RELAY_program.d \
-SERVO_program.d \
-TIMER1_program.d \
-UART_program.d
+APP/LoginSystem.d \
+HAL/BLUETOOTH/src/BLUETOOTH_program.d \
+HAL/BUTTON/src/BUTTON_program.d \
+HAL/EEPROM/src/EEPROM_program.d \
+HAL/KEYPAD/src/KEYPAD_program.d \
+HAL/LCD/src/LCD_program.d \
+HAL/LED/src/LED_program.d \
+HAL/RELAY/src/RELAY_program.d \
+HAL/SERVO/src/SERVO_program.d \
+MCAL/DIO/src/DIO_program.d \
+MCAL/I2C/src/I2C_program.d \
+MCAL/TMR1/src/TIMER1_program.d \
+MCAL/UART/src/UART_program.d
 
 
 OUTPUT_FILE_PATH +=LoginSystem.elf
@@ -149,7 +194,81 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 
 
-./%.o: .././%.c
+
+
+APP/%.o: ../APP/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/BLUETOOTH/src/%.o: ../HAL/BLUETOOTH/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/BUTTON/src/%.o: ../HAL/BUTTON/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/EEPROM/src/%.o: ../HAL/EEPROM/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/KEYPAD/src/%.o: ../HAL/KEYPAD/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/LCD/src/%.o: ../HAL/LCD/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/LED/src/%.o: ../HAL/LED/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/RELAY/src/%.o: ../HAL/RELAY/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+HAL/SERVO/src/%.o: ../HAL/SERVO/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+MCAL/DIO/src/%.o: ../MCAL/DIO/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+MCAL/I2C/src/%.o: ../MCAL/I2C/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+MCAL/TMR1/src/%.o: ../MCAL/TMR1/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 
+	@echo Finished building: $<
+
+MCAL/UART/src/%.o: ../MCAL/UART/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32   -o"$@" "$<" 

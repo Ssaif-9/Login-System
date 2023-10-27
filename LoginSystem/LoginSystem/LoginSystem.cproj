@@ -25,189 +25,246 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>m</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-</AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>m</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
-</AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BIT_MATH.h">
+    <Compile Include="APP\LoginSystem.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BUTTON_config.h">
+    <Compile Include="APP\LoginSystem.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BUTTON_interface.h">
+    <Compile Include="HAL\BLUETOOTH\includes\BLUETOOTH_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BUTTON_private.h">
+    <Compile Include="HAL\BLUETOOTH\includes\BLUETOOTH_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BUTTON_program.c">
+    <Compile Include="HAL\BLUETOOTH\includes\BLUETOOTH_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="DIO_config.h">
+    <Compile Include="HAL\BLUETOOTH\src\BLUETOOTH_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="DIO_interface.h">
+    <Compile Include="HAL\BUTTON\includes\BUTTON_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="DIO_private.h">
+    <Compile Include="HAL\BUTTON\includes\BUTTON_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="DIO_program.c">
+    <Compile Include="HAL\BUTTON\includes\BUTTON_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="EEPROM_interface.h">
+    <Compile Include="HAL\BUTTON\src\BUTTON_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="EEPROM_private.h">
+    <Compile Include="HAL\EEPROM\includes\EEPROM_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="EEPROM_program.c">
+    <Compile Include="HAL\EEPROM\includes\EEPROM_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="I2C_config.h">
+    <Compile Include="HAL\EEPROM\includes\EEPROM_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="I2C_interface.h">
+    <Compile Include="HAL\EEPROM\src\EEPROM_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="I2C_private.h">
+    <Compile Include="HAL\KEYPAD\includes\KEYPAD_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="I2C_program.c">
+    <Compile Include="HAL\KEYPAD\includes\KEYPAD_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LoginSystem.c">
+    <Compile Include="HAL\KEYPAD\includes\KEYPAD_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KEYPAD_config.h">
+    <Compile Include="HAL\KEYPAD\src\KEYPAD_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KEYPAD_interface.h">
+    <Compile Include="HAL\LCD\includes\LCD_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KEYPAD_private.h">
+    <Compile Include="HAL\LCD\includes\LCD_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KEYPAD_program.c">
+    <Compile Include="HAL\LCD\includes\LCD_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD_config.h">
+    <Compile Include="HAL\LCD\src\LCD_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD_interface.h">
+    <Compile Include="HAL\LED\includes\LED_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD_private.h">
+    <Compile Include="HAL\LED\includes\LED_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD_program.c">
+    <Compile Include="HAL\LED\includes\LED_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LED_config.h">
+    <Compile Include="HAL\LED\src\LED_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LED_interface.h">
+    <Compile Include="HAL\RELAY\includes\RELAY_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LED_private.h">
+    <Compile Include="HAL\RELAY\includes\RELAY_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LED_program.c">
+    <Compile Include="HAL\RELAY\includes\RELAY_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="PRIVATE_PASSWARD.h">
+    <Compile Include="HAL\RELAY\src\RELAY_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="RELAY_config.h">
+    <Compile Include="HAL\SERVO\includes\SERVO_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="RELAY_interface.h">
+    <Compile Include="HAL\SERVO\includes\SERVO_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="RELAY_private.h">
+    <Compile Include="HAL\SERVO\includes\SERVO_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="RELAY_program.c">
+    <Compile Include="HAL\SERVO\src\SERVO_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO_config.h">
+    <Compile Include="MCAL\DIO\includes\DIO_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO_interface.h">
+    <Compile Include="MCAL\DIO\includes\DIO_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO_private.h">
+    <Compile Include="MCAL\DIO\includes\DIO_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO_program.c">
+    <Compile Include="MCAL\DIO\src\DIO_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="STD_TYPE.h">
+    <Compile Include="MCAL\I2C\includes\I2C_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TIMER1_config.h">
+    <Compile Include="MCAL\I2C\includes\I2C_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TIMER1_interface.h">
+    <Compile Include="MCAL\I2C\includes\I2C_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TIMER1_private.h">
+    <Compile Include="MCAL\I2C\src\I2C_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TIMER1_program.c">
+    <Compile Include="MCAL\TMR1\includes\TIMER1_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="UART_config.h">
+    <Compile Include="MCAL\TMR1\includes\TIMER1_interface.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="UART_interface.h">
+    <Compile Include="MCAL\TMR1\includes\TIMER1_private.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="UART_private.h">
+    <Compile Include="MCAL\TMR1\src\TIMER1_program.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="UART_program.c">
+    <Compile Include="MCAL\UART\includes\UART_config.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\UART\includes\UART_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\includes\UART_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\src\UART_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UTILITIZE\BIT_MATH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UTILITIZE\STD_TYPE.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HAL\BLUETOOTH\includes" />
+    <Folder Include="HAL\BLUETOOTH\src" />
+    <Folder Include="HAL\BUTTON" />
+    <Folder Include="HAL\BUTTON\includes" />
+    <Folder Include="HAL\BUTTON\src" />
+    <Folder Include="HAL\EEPROM\includes" />
+    <Folder Include="HAL\EEPROM\src" />
+    <Folder Include="HAL\KEYPAD\includes" />
+    <Folder Include="HAL\KEYPAD\src" />
+    <Folder Include="HAL\LCD\includes" />
+    <Folder Include="HAL\LCD\src" />
+    <Folder Include="HAL\LED" />
+    <Folder Include="HAL\EEPROM" />
+    <Folder Include="HAL\KEYPAD" />
+    <Folder Include="HAL\LCD" />
+    <Folder Include="HAL\LED\includes" />
+    <Folder Include="HAL\LED\src" />
+    <Folder Include="HAL\BLUETOOTH" />
+    <Folder Include="HAL\RELAY" />
+    <Folder Include="HAL\RELAY\includes" />
+    <Folder Include="HAL\RELAY\src" />
+    <Folder Include="HAL\SERVO" />
+    <Folder Include="HAL\SERVO\includes" />
+    <Folder Include="HAL\SERVO\src" />
+    <Folder Include="MCAL" />
+    <Folder Include="HAL" />
+    <Folder Include="APP" />
+    <Folder Include="MCAL\DIO\includes" />
+    <Folder Include="MCAL\DIO\src" />
+    <Folder Include="MCAL\I2C" />
+    <Folder Include="MCAL\DIO" />
+    <Folder Include="MCAL\I2C\includes" />
+    <Folder Include="MCAL\I2C\src" />
+    <Folder Include="MCAL\TMR1\includes" />
+    <Folder Include="MCAL\TMR1\src" />
+    <Folder Include="MCAL\UART" />
+    <Folder Include="MCAL\TMR1" />
+    <Folder Include="MCAL\UART\includes" />
+    <Folder Include="MCAL\UART\src" />
+    <Folder Include="UTILITIZE" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
